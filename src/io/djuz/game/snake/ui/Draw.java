@@ -1,5 +1,9 @@
-package io.djuz.game.snake.logic;
+package io.djuz.game.snake.ui;
 
+import io.djuz.game.snake.logic.Coordinate;
+import io.djuz.game.snake.logic.Food;
+import io.djuz.game.snake.logic.Grid;
+import io.djuz.game.snake.logic.Snake;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 

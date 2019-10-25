@@ -1,5 +1,6 @@
 package io.djuz.game.snake.logic;
 
+import io.djuz.game.snake.ui.Draw;
 import javafx.scene.canvas.GraphicsContext;
 
 public class Loop implements Runnable {
@@ -31,6 +32,9 @@ public class Loop implements Runnable {
         paused = false;
     }
 
+    public boolean isPaused() {
+        return paused;
+    }
     public void pause() {
         paused = true;
     }

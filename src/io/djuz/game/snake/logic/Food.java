@@ -4,7 +4,7 @@ package io.djuz.game.snake.logic;
 import javafx.scene.paint.Color;
 
 public class Food {
-    //    private FoodType foodType;
+
     public static final Color COLOR = Color.TOMATO;
     private Coordinate coordinate;
 
