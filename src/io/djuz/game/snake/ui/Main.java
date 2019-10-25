@@ -1,5 +1,6 @@
-package io.djuz.game.snake;
+package io.djuz.game.snake.ui;
 
+import io.djuz.game.snake.logic.Grid;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

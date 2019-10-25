@@ -1,4 +1,4 @@
-package io.djuz.game.snake;
+package io.djuz.game.snake.logic;
 
 /**
  * Class for the coordinate save.

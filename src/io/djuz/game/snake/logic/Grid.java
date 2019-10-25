@@ -1,4 +1,4 @@
-package io.djuz.game.snake;
+package io.djuz.game.snake.logic;
 
 import javafx.scene.paint.Color;
 
@@ -15,10 +15,17 @@ public class Grid {
     public Grid(int rows, int cols) {
         this.cols = cols / CELLSIZE;
         this.rows = rows / CELLSIZE;
-        snake = new Snake();
-        food = new Food();
+        snake = new Snake(this, new Coordinate(rows / 2, cols / 2));
+        food = new Food(getRandomCoordinate());
     }
 
+    public int getWidth() {
+        return rows * CELLSIZE;
+    }
+
+    public int getHeight() {
+        return cols * CELLSIZE;
+    }
     public static int getCELLSIZE() {
         return CELLSIZE;
     }
@@ -39,7 +46,6 @@ public class Grid {
         return food;
     }
 
-
     public Coordinate gridWrap(Coordinate coordinate) {
         int x = coordinate.getCoordinateX();
         int y = coordinate.getCoordinateY();
@@ -55,7 +61,16 @@ public class Grid {
         Coordinate coordinate;
         do {
             coordinate = new Coordinate(random.nextInt(rows), random.nextInt(cols));
-        } while (true)
+        } while (coordinate.equals(snake.getSnakeFace()));
         return coordinate;
+    }
+
+    public void update() {
+        if (food.getCoordinate().equals(snake.getSnakeFace())) {
+            snake.extend();
+            food.setCoordinate(getRandomCoordinate());
+        } else {
+            snake.move();
+        }
     }
 }

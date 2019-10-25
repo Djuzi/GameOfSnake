@@ -1,4 +1,4 @@
-package io.djuz.game.snake;
+package io.djuz.game.snake.logic;
 
 import javafx.scene.paint.Color;
 
@@ -9,8 +9,8 @@ import java.util.List;
  * A class describing the structure and methods for the essence of the snake
  */
 public class Snake {
-    private final static Color LIVE = Color.GREENYELLOW;
-    private final static Color DEAD = Color.RED;
+    public final static Color LIVE = Color.GREENYELLOW;
+    public final static Color DEAD = Color.RED;
     private Grid grid;
     private Coordinate snakeFace;
     private List<Coordinate> snakeBody;
