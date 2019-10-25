@@ -2,6 +2,7 @@ package io.djuz.game.snake;
 
 import javafx.scene.paint.Color;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Snake {
@@ -9,17 +10,20 @@ public class Snake {
     private final static Color DEAD = Color.RED;
     private Grid grid;
     private Coordinate snakeFace;
-    private List<Coordinate> snakebody;
+    private List<Coordinate> snakeBody;
     private int length;
     private boolean isAlive;
+    private int xMove;
+    private int yMove;
 
-    //FIXME: Переделать заглушка - очень спать хочется
-    public Snake(Grid grid, Coordinate snakeFace, List<Coordinate> snakebody, int length, boolean isAlive) {
+    public Snake(Grid grid, Coordinate snakeFace) {
         this.grid = grid;
         this.snakeFace = snakeFace;
-        this.snakebody = snakebody;
-        this.length = length;
-        this.isAlive = isAlive;
+        this.snakeBody = new LinkedList<>();
+        this.length = 1;
+        this.isAlive = true;
+        this.xMove = 1;
+        this.yMove = 1;
     }
 
     public Grid getGrid() {
@@ -38,12 +42,12 @@ public class Snake {
         this.snakeFace = snakeFace;
     }
 
-    public List<Coordinate> getSnakebody() {
-        return snakebody;
+    public List<Coordinate> getSnakeBody() {
+        return snakeBody;
     }
 
-    public void setSnakebody(List<Coordinate> snakebody) {
-        this.snakebody = snakebody;
+    public void setSnakeBody(List<Coordinate> snakeBody) {
+        this.snakeBody = snakeBody;
     }
 
     public int getLength() {
@@ -62,6 +66,11 @@ public class Snake {
         isAlive = alive;
     }
 
+    /**
+     * Snake enlargement after eating
+     *
+     * @param coordinate Food location but a new point for the snake’s head
+     */
     private void increaseLength(Coordinate coordinate) {
         length++;
     }
