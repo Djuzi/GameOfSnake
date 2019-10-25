@@ -26,7 +26,7 @@ public class Draw {
         Snake snake = grid.getSnake();
         gc.setFill(Snake.LIVE);
         snake.getSnakeBody().forEach(point -> paintCoordinate(point, gc));
-        if (!snake.isAlive()) {
+        if (snake.isAlive()) {
             gc.setFill(Snake.DEAD);
             paintCoordinate(snake.getSnakeFace(), gc);
         }

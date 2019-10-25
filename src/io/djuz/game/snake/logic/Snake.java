@@ -88,11 +88,9 @@ public class Snake {
      */
     private void checkAndAdd(Coordinate coordinate) {
         coordinate = grid.gridWrap(coordinate);
-        if (isAlive & !snakeBody.contains(snakeFace)) {
-            isAlive = true;
-            snakeBody.add(coordinate);
-            snakeFace = coordinate;
-        } else isAlive = false;
+        isAlive &= !snakeBody.contains(coordinate);
+        snakeBody.add(coordinate);
+        snakeFace = coordinate;
     }
 
     /**

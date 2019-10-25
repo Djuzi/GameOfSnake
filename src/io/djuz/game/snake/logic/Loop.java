@@ -14,7 +14,7 @@ public class Loop implements Runnable {
     public Loop(Grid grid, GraphicsContext context) {
         this.grid = grid;
         this.context = context;
-        this.interval = 600.0f;
+        this.interval = 100.0f;
         this.running = true;
         this.paused = false;
         this.keyIsPressed = false;

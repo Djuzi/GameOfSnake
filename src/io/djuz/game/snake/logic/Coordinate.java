@@ -37,7 +37,7 @@ public class Coordinate {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || !(o instanceof Coordinate)) return false;
+        if (!(o instanceof Coordinate)) return false;
         Coordinate coordinate = (Coordinate) o;
         return coordinateX == coordinate.coordinateX & coordinateY == coordinate.coordinateY;
     }

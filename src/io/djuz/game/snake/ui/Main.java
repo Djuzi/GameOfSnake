@@ -18,6 +18,7 @@ public class Main extends Application {
     private Grid grid;
     private GraphicsContext context;
     private Loop loop;
+
     public static void main(String[] args) {
         launch(args);
     }
