@@ -40,7 +40,7 @@ public class Grid {
     }
 
 
-    public Coordinate gridCare(Coordinate coordinate) {
+    public Coordinate gridWrap(Coordinate coordinate) {
         int x = coordinate.getCoordinateX();
         int y = coordinate.getCoordinateY();
         if (x >= rows) x = 0;

@@ -30,7 +30,7 @@ public class Coordinate {
         this.coordinateY = coordinateY;
     }
 
-    public Coordinate movePoint(int newX, int newY) {
+    public Coordinate moveCoordinate(int newX, int newY) {
         return new Coordinate(coordinateX + newX, coordinateY + newY);
     }
 
